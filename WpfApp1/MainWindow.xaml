@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="425" Width="418">
+    <StackPanel>
+        <ScrollViewer Height="300" Width="400" HorizontalAlignment="Left"></ScrollViewer>
+        <Grid Width="400" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Margin=" 5 0 5 0">Имя</Label>
+            <Label Grid.Row="0" Grid.Column="2"  Margin=" 5 0 5 0">Номер</Label>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="5 5 -50 5" x:Name="nameTextBox"></TextBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Margin="5 5 -50 5" x:Name="numberTextBox"></TextBox>
+            <Button Grid.Row="1" Grid.Column="4" Margin="5" x:Name="addNumber" Click="addNumber_Click">Добавить</Button>
+            <Button Grid.Row="2" Grid.Column="0" Margin="5" x:Name="editNumber" Click="addNumber_Click">Редакт.</Button>
+            <Button Grid.Row="2" Grid.Column="1" Margin="5" x:Name="deleteNumber" Click="addNumber_Click">Удалить</Button>
+            <Button Grid.Row="2" Grid.Column="2" Margin="5" x:Name="clearNumber" Click="addNumber_Click">Очистить</Button>
+
+
+        </Grid>
+    </StackPanel>
+</Window>
