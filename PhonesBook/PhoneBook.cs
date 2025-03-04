@@ -8,7 +8,7 @@ using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApp1
+namespace PhonesBook
 {
 	public class PhoneBook
 	{
