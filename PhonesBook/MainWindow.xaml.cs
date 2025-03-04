@@ -106,7 +106,9 @@ namespace PhonesBook
             }
             catch (Exception ee)
             {
-                Debug.WriteLine(ee);
+				UniversalWindow universalWindow = new UniversalWindow(ee.Message);
+				universalWindow.Show();
+				Debug.WriteLine(ee);
             }
             phonesDict = phoneBook.GetPhone();
             UpdatePhones();
@@ -121,7 +123,10 @@ namespace PhonesBook
             }
             catch (Exception ee)
             {
-                Debug.WriteLine(ee);
+				UniversalWindow universalWindow = new UniversalWindow(ee.Message);
+                universalWindow.Show();
+
+				Debug.WriteLine(ee);
             }
             phonesDict = phoneBook.GetPhone();
             UpdatePhones();
