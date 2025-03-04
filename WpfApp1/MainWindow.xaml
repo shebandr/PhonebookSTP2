@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="425" Width="418">
     <StackPanel>
-        <ScrollViewer Height="300" Width="400" HorizontalAlignment="Left"></ScrollViewer>
+        <ScrollViewer Height="300" Width="400" HorizontalAlignment="Left" x:Name="mainScrollViewer">
+            <ListBox ItemsSource="{Binding Phones}" SelectedItem="{Binding SelectedPhone, Mode=TwoWay}" x:Name="mainListBox" SelectionChanged="ListBox_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="0,0,10,0"/>
+                            <TextBlock Text="{Binding Phone}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </ScrollViewer>
         <Grid Width="400" HorizontalAlignment="Left">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -26,9 +37,10 @@
             <TextBox Grid.Row="1" Grid.Column="0" Margin="5 5 -50 5" x:Name="nameTextBox"></TextBox>
             <TextBox Grid.Row="1" Grid.Column="2" Margin="5 5 -50 5" x:Name="numberTextBox"></TextBox>
             <Button Grid.Row="1" Grid.Column="4" Margin="5" x:Name="addNumber" Click="addNumber_Click">Добавить</Button>
-            <Button Grid.Row="2" Grid.Column="0" Margin="5" x:Name="editNumber" Click="addNumber_Click">Редакт.</Button>
-            <Button Grid.Row="2" Grid.Column="1" Margin="5" x:Name="deleteNumber" Click="addNumber_Click">Удалить</Button>
-            <Button Grid.Row="2" Grid.Column="2" Margin="5" x:Name="clearNumber" Click="addNumber_Click">Очистить</Button>
+            <Button Grid.Row="2" Grid.Column="0" Margin="5" x:Name="editNumber" Click="editNumber_Click">Редакт.</Button>
+            <Button Grid.Row="2" Grid.Column="1" Margin="5" x:Name="deleteNumber" Click="deleteNumber_Click">Удалить</Button>
+            <Button Grid.Row="2" Grid.Column="2" Margin="5" x:Name="clearNumber" Click="clearNumber_Click">Очистить</Button>
+            <Button Grid.Row="2" Grid.Column="3" Margin="5" x:Name="searchNumber" Click="searchNumber_Click">Поиск</Button>
 
 
         </Grid>
